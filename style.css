@@ -1,0 +1,52 @@
+/* تخصيص Tailwind + تأثيرات Cyberpunk */
+* {
+    font-family: 'Inter', 'JetBrains Mono', monospace;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #0D1117;
+}
+::-webkit-scrollbar-thumb {
+    background: #00E5FF;
+    border-radius: 5px;
+}
+
+.glow-text {
+    text-shadow: 0 0 5px #00E5FF, 0 0 10px #00E5FF80;
+}
+.glow-border {
+    box-shadow: 0 0 0 1px #00E5FF20, 0 0 0 2px #00E5FF10;
+    transition: all 0.2s;
+}
+.glow-border:hover {
+    box-shadow: 0 0 0 1px #00E5FF, 0 0 8px #00E5FF;
+}
+
+.terminal-window {
+    background: #0A0E15;
+    border: 1px solid #1F2937;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,229,255,0.1);
+}
+
+@keyframes pulse-red {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); background-color: #FF1744; }
+}
+.critical-pulse {
+    animation: pulse-red 0.8s ease-in-out 2;
+}
+
+/* تأثير الكتابة في terminal */
+.terminal-prompt::before {
+    content: ">";
+    color: #00FF88;
+    margin-left: 8px;
+    font-weight: bold;
+}
